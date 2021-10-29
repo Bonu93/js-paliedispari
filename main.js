@@ -8,9 +8,8 @@ btnStart.addEventListener('click', function(){
 
     const userWord = prompt('Inserisci una parola')
     
-    const palindrome = checkPalindrome(userWord);
     
-    if (palindrome) {
+    if (checkPalindrome(userWord)) {
         console.log(`La parola ${userWord} è palindroma`);
     } else {
         console.log(`La parola ${userWord} non è palindroma`);
@@ -40,7 +39,7 @@ btnPlay.addEventListener('click', function(){
     
     while (userNum < 1 || userNum > 5 || isNaN(userNum)) {
         alert('Puoi scegliere soltanto numeri da 1 a 5');
-        userNum =parseInt(prompt('Scegli un numero da 1 a 5'));
+        userNum = parseInt(prompt('Scegli un numero da 1 a 5'));
     }
 
     const cpuNum = genRandomNumber(1, 5);
@@ -51,11 +50,9 @@ btnPlay.addEventListener('click', function(){
     console.log(`Il computer ha scelto ${cpuNum}`);
     console.log(`La somma è ${total}`);
 
-    const even = checkOddEven(total);
-
-    if (even && userChoice === 'pari') {
+    if (checkOddEven(total) && userChoice === 'pari') {
         console.log('Hai vinto');
-    } else if (even === false && userChoice === 'dispari') {
+    } else if (checkOddEven(total) === false && userChoice === 'dispari') {
         console.log('Hai vinto');
     } else {
         console.log('Vince il computer');
