@@ -43,7 +43,7 @@ btnPlay.addEventListener('click', function(){
         userNum =parseInt(prompt('Scegli un numero da 1 a 5'));
     }
 
-    const cpuNum = genRandomNumber(1, 5)
+    const cpuNum = genRandomNumber(1, 5);
     
     const total = (userNum + cpuNum)
     console.log(`Hai scelto ${userChoice}`);
@@ -51,7 +51,7 @@ btnPlay.addEventListener('click', function(){
     console.log(`Il computer ha scelto ${cpuNum}`);
     console.log(`La somma è ${total}`);
 
-    const even = checkOddEven(total)
+    const even = checkOddEven(total);
 
     if (even && userChoice === 'pari') {
         console.log('Hai vinto');
