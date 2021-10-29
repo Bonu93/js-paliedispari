@@ -46,6 +46,7 @@ btnPlay.addEventListener('click', function(){
     const cpuNum = genRandomNumber(1, 5)
     
     const total = (userNum + cpuNum)
+    console.log(`Hai scelto ${userChoice}`);
     console.log(`Il tuo numero è ${userNum}`);
     console.log(`Il computer ha scelto ${cpuNum}`);
     console.log(`La somma è ${total}`);
