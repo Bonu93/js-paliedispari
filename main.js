@@ -15,7 +15,7 @@ btnStart.addEventListener('click', function(){
     } else {
         console.log(`La parola ${userWord} non è palindroma`);
     }
-    
+
 })
 
 
@@ -68,7 +68,6 @@ btnPlay.addEventListener('click', function(){
 
 
 
-
 /* 
 *******  FUNCTIONS  ********
 */
@@ -102,7 +101,11 @@ function genRandomNumber (min, max) {
     return rand;
 }
 
-
+/**
+ * 
+ * @param {number} number 
+ * @returns true or false, checks if number is odd or even
+ */
 function checkOddEven(number) {
     let even = false;
     if (number % 2 === 0) {
