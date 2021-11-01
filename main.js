@@ -61,9 +61,9 @@ btnPlay.addEventListener('click', function(){
     if (checkOddEven(total) && userChoice === 'pari') {
         oddEvenResult.innerHTML = 'Hai vinto';
     } else if (checkOddEven(total) === false && userChoice === 'dispari') {
-        oddEvenResult.innerHTML = '<h3 class="text-danger">Hai vinto!</h3>';
+        oddEvenResult.innerHTML += `<h3 class="text-danger">Hai vinto!!</h3>`;
     } else {
-        oddEvenResult.innerHTML = '<h3 class="text-danger">Vince il computer!</h3>';
+        oddEvenResult.innerHTML += `<h3 class="text-danger">Vince il computer!</h3>`;
     }
 
 })
