@@ -39,8 +39,8 @@ btnPlay.addEventListener('click', function(){
     let userNum = parseInt(oddEvenNumInput.value);
     
     while (userNum < 1 || userNum > 5 || isNaN(userNum)) {
-        alert('Puoi scegliere soltanto numeri da 1 a 5');
-        userNum = oddEvenNumInput.value;
+        alert('Puoi scegliere soltanto numeri da 1 a 5, te ne verrà assegnato uno casuale');
+        userNum = genRandomNumber(1, 5);
     }
 
     const cpuNum = genRandomNumber(1, 5);
