@@ -2,19 +2,20 @@
 // Chiedere all’utente di inserire una parola
 // Creare una funzione per capire se la parola inserita è palindroma
 
-const btnStart = document.querySelector('.btn-start')
+const btnStart = document.querySelector('.btn-start');
+const wordInput = document.getElementById('word');
+const palindromeRes = document.querySelector('.palindrome-result');
 
 btnStart.addEventListener('click', function(){
 
-    const userWord = prompt('Inserisci una parola')
+    const userWord = wordInput.value.trim().toLowerCase();
     
     
     if (checkPalindrome(userWord)) {
-        console.log(`La parola ${userWord} è palindroma`);
+        palindromeRes.innerHTML = ` <h3 class="text-danger mt-3">La parola ${userWord} è palindroma!</h3>`;
     } else {
-        console.log(`La parola ${userWord} non è palindroma`);
+        palindromeRes.innerHTML = `<h3 class="text-danger mt-3">La parola ${userWord} non è palindroma!</h3>`;
     }
-
 })
 
 
@@ -25,38 +26,46 @@ btnStart.addEventListener('click', function(){
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
-const btnPlay = document.querySelector('.btn-play')
+const btnPlay = document.querySelector('.btn-play');
+const oddEvenInput = document.getElementById('odd-even');
+const oddEvenNumInput = document.getElementById('oddeven-number');
+const oddevenBox = document.querySelector('.result');
+const oddEvenResult = document.querySelector('.oddeven-result');
+
 
 btnPlay.addEventListener('click', function(){
-    let userChoice = prompt('Scegli pari o dispari?').trim().toLowerCase();
+    let userChoice = oddEvenInput.value;
 
-    while (userChoice !== 'pari' && userChoice !== 'dispari') {
-        alert('Scrivi "pari" o "dispari"!');
-        userChoice = prompt('Scegli pari o dispari?').trim().toLowerCase();
-    }
-
-    let userNum = parseInt(prompt('Scegli un numero da 1 a 5'));
+    let userNum = parseInt(oddEvenNumInput.value);
     
     while (userNum < 1 || userNum > 5 || isNaN(userNum)) {
         alert('Puoi scegliere soltanto numeri da 1 a 5');
-        userNum = parseInt(prompt('Scegli un numero da 1 a 5'));
+        userNum = oddEvenNumInput.value;
     }
 
     const cpuNum = genRandomNumber(1, 5);
     
-    const total = (userNum + cpuNum)
-    console.log(`Hai scelto ${userChoice}`);
-    console.log(`Il tuo numero è ${userNum}`);
-    console.log(`Il computer ha scelto ${cpuNum}`);
-    console.log(`La somma è ${total}`);
+    const total = (userNum + cpuNum);
+
+    oddevenBox.innerHTML = `
+    <h4 class="you mt-3">
+    Hai scelto ${userChoice}, il tuo numero è ${userNum}
+    </h4>
+    <h4 class="cpu"
+    >Il computer ha scelto ${cpuNum}
+    </h4>
+    <h4 class="sum">
+    La somma è ${total}
+    </h4>`;
 
     if (checkOddEven(total) && userChoice === 'pari') {
-        console.log('Hai vinto');
+        oddEvenResult.innerHTML = 'Hai vinto';
     } else if (checkOddEven(total) === false && userChoice === 'dispari') {
-        console.log('Hai vinto');
+        oddEvenResult.innerHTML = '<h3 class="text-danger">Hai vinto!</h3>';
     } else {
-        console.log('Vince il computer');
+        oddEvenResult.innerHTML = '<h3 class="text-danger">Vince il computer!</h3>';
     }
+
 })
 
 
@@ -95,7 +104,7 @@ function checkPalindrome(word) {
  * @returns a random number between min and max
  */
 function genRandomNumber (min, max) {
-    const rand = Math.floor(Math.random() * (max - min +1)) + min;
+    const rand = Math.floor(Math.random() * (max - min + 1)) + min;
     return rand;
 }
 
