@@ -59,7 +59,7 @@ btnPlay.addEventListener('click', function(){
     </h4>`;
 
     if (checkOddEven(total) && userChoice === 'pari') {
-        oddEvenResult.innerHTML = 'Hai vinto';
+        oddEvenResult.innerHTML = `<h3 class="text-danger">Hai vinto!!</h3>`;
     } else if (checkOddEven(total) === false && userChoice === 'dispari') {
         oddEvenResult.innerHTML += `<h3 class="text-danger">Hai vinto!!</h3>`;
     } else {
