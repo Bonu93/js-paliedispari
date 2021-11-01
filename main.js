@@ -12,7 +12,7 @@ btnStart.addEventListener('click', function(){
     
     
     if (checkPalindrome(userWord)) {
-        palindromeRes.innerHTML = ` <h3 class="text-danger mt-3">La parola ${userWord} è palindroma!</h3>`;
+        palindromeRes.innerHTML = `<h3 class="text-danger mt-3">La parola ${userWord} è palindroma!</h3>`;
     } else {
         palindromeRes.innerHTML = `<h3 class="text-danger mt-3">La parola ${userWord} non è palindroma!</h3>`;
     }
@@ -65,7 +65,6 @@ btnPlay.addEventListener('click', function(){
     } else {
         oddEvenResult.innerHTML = `<h3 class="text-danger">Vince il computer!</h3>`;
     }
-
 })
 
 
@@ -82,14 +81,14 @@ btnPlay.addEventListener('click', function(){
 
 /**
  * 
- * @param {*} word 
+ * @param {string} word 
  * @returns true or false, checks if word is palindrome or not
  */
 function checkPalindrome(word) {
     let revWord = '';
     let palindrome = false;
     for (let i = word.length - 1; i >= 0; i--) {
-        revWord += word[i]
+        revWord += word[i];
     }
     if (word === revWord) {
        palindrome = true;
